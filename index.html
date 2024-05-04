@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diseñador Freelancer</title>
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -14,12 +19,15 @@
     </header>
 
     <!-- Navegacion -->
-    <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Clientes</a>
-        <a href="#">Sobre Mi</a>
-        <a href="#">Contacto</a>
-    </nav>
+    <div class="nav-bg"> <!-- Utility class -->
+        <nav class="navegacion-principal contenedor">
+            <a href="#">Inicio</a>
+            <a href="#">Clientes</a>
+            <a href="#">Sobre Mi</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </div>
+    
     
     <!-- Imagen -->
     <img src="img/hero.jpg" alt="imagen creativa">
@@ -103,31 +111,25 @@
         <form action="">
             <fieldset>
                 <legend>Contáctame</legend>
-
                 <div>
                     <label for="">Nombre</label>
                     <input type="text" name="nombre" id="" placeholder="Ingrese su nombre">
                 </div>
-                
                 <div>
                     <label for="">Teléfono</label>
                     <input type="text" name="telefono" id="" placeholder="Ingrese su teléfono">
                 </div>
-                
                 <div>
                     <label for="">Correo</label>
                     <input type="text" name="correo" id="" placeholder="Ingrese su correo">
                 </div>
-                
                 <div>
                     <label for="">Mensaje</label>
                     <textarea name="mensaje" id="" cols="30" rows="10"></textarea>
                 </div>
-                
                 <div>
                     <input type="submit" value="Enviar">
                 </div>
-                
             </fieldset>
         </form>
     </section>
