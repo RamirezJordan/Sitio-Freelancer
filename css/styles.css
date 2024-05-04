@@ -23,11 +23,15 @@ body {
     /* Colocar gradiente de fondo */
     background-image: linear-gradient(to top, #dfe9f3 0%, var(--blanco) 100%);
 }
+img {
+    max-width: 100%;
+}
 /* Centra el contenido */
 
 .contenedor {
     max-width: 120rem;
     margin: 0 auto;
+    padding: 2rem 2rem;
 }
 .boton {
     background-color: var(--secundario);
@@ -51,7 +55,6 @@ body {
     -moz-box-shadow: 0px 5px 15px 0px rgba(69,61,69,0.69);
     box-shadow: 0px 5px 15px 0px rgba(69,61,69,0.69);
     background-color: var(--blanco);
-    padding: 2rem;
     border-radius: 1rem;
 }
 
@@ -82,6 +85,9 @@ h1, h2, h3 {
     }
 }
 /* utilidades */
+.mt-10 {
+    margin-top: 1rem;
+}
 .w-90 {
     width: 90%;
 }
@@ -148,7 +154,7 @@ h1, h2, h3 {
 }
 /* Coloca el sombreado sobre la imagen */
 .contenido-hero {
-    position: absolute;
+    position: absolute; /* Este es el hijo de la .hero */
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
@@ -163,12 +169,12 @@ h1, h2, h3 {
     color: var(--blanco);
 }
 
-.servicios,
+/* .servicios,
 .navegacion-principal,
 .formulario {
     scroll-snap-align: center;
-    scroll-snap-stop: always;
-}
+    scroll-snap-stop: always; 
+}*/
 /* servicios */
 @media (min-width: 768px) {  /* AL verse en un telefono se colocan uno sobre otro */
     .servicios { /* crea las tres columnas */
@@ -183,11 +189,13 @@ h1, h2, h3 {
     flex-direction: column;
     align-items: center;
 }
-.servicio h3{
+.servicio h3, 
+.cliente h3 {
     color: var(--primario);
-    font-weight: normal;
+    font-weight: bold;
 }
-.servicio p {
+.servicio p,
+.cliente p {
     line-height: 2; /* interlineado */
     text-align: center;
 }
@@ -208,7 +216,7 @@ h1, h2, h3 {
     background-color: var(--gris);
     width: min(60rem, 100%);/* Usa el valor más pequeño */
     margin: 0 auto; /* centra horizontalmente el formulario*/
-    padding: 2rem;
+    padding: 4rem;
     border-radius: 1rem;
 }
 .formulario fieldset {
@@ -258,4 +266,46 @@ h1, h2, h3 {
 /* footer */
 .footer {
     text-align: center;
+}
+
+/* clientes */
+
+@media (min-width: 768px) { 
+    .clientes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+    }
+}
+.cliente {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.imagen {
+    /* centra los circulos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imagen img {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+}
+
+
+/* sobre mi */
+.informacion {
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 768px) { 
+    .informacion {
+    flex-direction: row;
+    justify-content: space-between;
+    }
+}
+.text-info {
+    padding: 1rem;
 }
