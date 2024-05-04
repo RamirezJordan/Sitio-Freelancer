@@ -24,23 +24,44 @@ body {
     font-size: 2rem;
 }
 .contenedor {
-    width: 120rem;
+    max-width: 120rem;
     margin: 0 auto;
 }
 .nav-bg {
     background-color: var(--secundario);
 }
+/* Coloca centrados los enlaces */
 .navegacion-principal {
-    padding: 1rem;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+}
+/* Cambia la dirección de los enlaces */
+@media (min-width: 768px) { 
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 .navegacion-principal a {
+    /* Coloca los enlaces unos obre otro */
+    display: block;
+    text-align: center;
+
+    /* tamaño de la barra de navegación y decoracion del texto */
+    padding: 1rem;
     color: var(--blanco);
     text-decoration: none;
     cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
 }
 .navegacion-principal a:hover {
     color: var(--primario);
     text-decoration: none;
+}
+/* coloca la imagen de fondo y la ajusta a la pantalla*/
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
